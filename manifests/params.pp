@@ -60,11 +60,11 @@ class puppet::params {
 
   $master_package     =  $::operatingsystem ? {
     /(Debian|Ubuntu)/ => ['puppetmaster-common','puppetmaster'],
-    default           => ['puppet-server'],
+    default           => ['ruby193-puppet'],
   }
   $client_package     = $::operatingsystem ? {
     /(Debian|Ubuntu)/ => ['puppet-common','puppet'],
-    default           => ['puppet'],
+    default           => ['ruby193-puppet'],
   }
 
   # This only applies to puppet::cron
